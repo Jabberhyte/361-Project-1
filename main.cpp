@@ -54,6 +54,7 @@ bool login(int count) {
                 return false;
             }
         } else {
+            std::cout << "login successful" << std::endl;
             return true;
         }
     }
