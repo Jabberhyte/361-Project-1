@@ -1,10 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-int main() {
-    bool loginAttempt = login(0);
-}
-
 bool login(int count) {
     std::cout << "Hello!  Please enter 1 if you are a returning user.  If you are a new uaser, please enter 2: ";
 
@@ -41,12 +37,11 @@ bool login(int count) {
         std::cout << "Please enter your password: ";
         std::cin >> password;
 
-        std::ofstream submit;
+
         submit.open ("login.txt");
         submit << password;
         submit.close();
 
-        std::ifstream verify;
         verify.open ("login.txt");
         verify >> userVerify;
 
@@ -58,7 +53,15 @@ bool login(int count) {
             } else {
                 return false;
             }
+        } else {
+            return true;
         }
     }
 
+    return true;
+
+}
+
+int main() {
+    bool loginAttempt = login(0);
 }
